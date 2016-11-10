@@ -44,7 +44,7 @@ public class PoemTests {
 	
 	@Test
 	public void countHowManyTimesAWordAppearsInThePoem() {//countWordAppearsInPoem
-		assertThat(luuletus.countWord(luuletusRunnel, "Jumal"), is(2));
+		assertThat(luuletus.countWord(luuletusRunnel, "jumal"), is(2));
 	}
 	
 	@Test
@@ -60,7 +60,7 @@ public class PoemTests {
 	@Test
 	public void checkOnWhichRowsTheWordAppearsIn() throws Exception {
 		List<Integer> itDoesContain = Arrays.asList(3,4);
-		List<Integer> itDoesNotContain = Arrays.asList(-1);
+		List<Integer> itDoesNotContain = Arrays.asList();
 		
 		assertThat(luuletus.appearedRows(luuletusRunnel, "jumal"), is(itDoesContain));
 		assertThat(luuletus.appearedRows(luuletusRunnel, "küpsis"), is(itDoesNotContain));
