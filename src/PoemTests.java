@@ -33,32 +33,32 @@ public class PoemTests {
 	Poem luuletus = new Poem();
 	
 	@Test
-	public void ifItContainsASpecificWord() {
+	public void ifPoemContainsWord() {
 		assertThat(Poem.hasWord(luuletusRunnel, "Jumal"), is(true));
 	}
 	
 	@Test
-	public void ifItDoesNotContainsASpecificWord() {//notContainingWord
+	public void ifPoemDoesNotContainWord() {//notContainingWord
 		assertThat(Poem.hasWord(luuletusRunnel, "küpsis"), is(false));
 	}
 	
 	@Test
-	public void countHowManyTimesAWordAppearsInThePoem() {//countWordAppearsInPoem
+	public void countHowManyTimesWordAppearsInPoem() {//countWordAppearsInPoem
 		assertThat(luuletus.countWord(luuletusRunnel, "jumal"), is(2));
 	}
 	
 	@Test
-	public void countHowManyTimesAWordAppearsInThePoemIsZero() throws Exception {
+	public void countHowManyTimesWordAppearsInPoemIsZero() throws Exception {
 		assertThat(luuletus.countWord(luuletusRunnel, "küpsis"), is(0));
 	}
 
 	@Test
-	public void checkWhichRowTheWordFirstAppearsIn() throws Exception {
+	public void checkRowNrTheWordFirstAppearsIn() throws Exception {
 		assertThat(luuletus.firstAppear(luuletusRunnel, "sind"), is(1));
 	}
 	
 	@Test
-	public void checkOnWhichRowsTheWordAppearsIn() throws Exception {
+	public void checkRowNrsTheWordAppearsIn() throws Exception {
 		List<Integer> itDoesContain = Arrays.asList(3,4);
 		List<Integer> itDoesNotContain = Arrays.asList();
 		
