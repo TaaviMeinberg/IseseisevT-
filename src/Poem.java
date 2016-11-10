@@ -1,18 +1,10 @@
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class Poem {
-	
-	public static void main(String[] args) {
-		System.out.println(toLower("B"));
-	}
 
 	public static boolean hasWord(String[] poem, String searchStr) {
-		//TODO vaata üle need muutujad
 		for (String string : poem) {
 			String[] parts = string.replaceAll("[,:!?.]","").split(" ");
 			if (contains(parts,searchStr)) {
@@ -77,18 +69,6 @@ public class Poem {
 			}
 		}
 		return false;
-	}
-	
-	private static String toLower(String ch) {
-//		String[] uppers = {"A", "B", "C" };
-//		String[] lowers =  {"a", "b", "c" };
-		Map<String, String> lettersMap = new HashMap<String, String>();
-		lettersMap.put("A", "a");
-		lettersMap.put("B", "b");
-		lettersMap.put("C", "c");
-		//
-		
-		return "Not found";
 	}
 
 }
