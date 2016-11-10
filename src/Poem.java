@@ -6,18 +6,19 @@ public class Poem {
 
 	public static boolean hasWord(String[] poem, String searchStr) {
 		for (String string : poem) {
-			String[] parts = string.replaceAll("[,:!?.]","").split(" ");
+			String[] parts = removePunctuationAndSplit(string);
 			if (contains(parts,searchStr)) {
 				return true;
 			}
 		}
 		return false;
 	}
+
 	
 	public int countWord(String[] poem, String searchStr) {
 		int count = 0;
 		for (String string : poem) {
-			String[] parts = string.replaceAll("[,:!?.]","").split(" ");
+			String[] parts = removePunctuationAndSplit(string);
 			if (contains(parts,searchStr)) {
 				count++;
 			}
@@ -28,7 +29,7 @@ public class Poem {
 	public int firstAppear(String[] poem, String searchStr) {
 		int rowNum = 1;
 		for (String string : poem) {
-			String[] parts = string.replaceAll("[,:!?.]","").split(" ");
+			String[] parts = removePunctuationAndSplit(string);
 			if (contains(parts,searchStr)) {
 				return rowNum;
 			}
@@ -41,7 +42,7 @@ public class Poem {
 		List<Integer> NumberOfRows = new ArrayList<Integer>();
 		int rowNumber = 1;
 		for (String string : poem) {
-			String[] parts = string.replaceAll("[,:!?.]","").split(" ");
+			String[] parts = removePunctuationAndSplit(string);
 			if (contains(parts,searchStr)) {
 				NumberOfRows.add(rowNumber);
 			}
@@ -54,7 +55,7 @@ public class Poem {
 	public List<String> appearedRowsWords(String[] poem, String searchStr) {
 		List<String> rowWords = new ArrayList<String>();
 		for (String string : poem) {
-			String[] parts = string.replaceAll("[,:!?.]","").split(" ");
+			String[] parts = removePunctuationAndSplit(string);
 			if (contains(parts,searchStr)) {
 				rowWords.add(string);
 			}
@@ -71,4 +72,7 @@ public class Poem {
 		return false;
 	}
 
+	private static String[] removePunctuationAndSplit(String string) {
+		return string.replaceAll("[,:!?.]","").split(" ");
+	}
 }

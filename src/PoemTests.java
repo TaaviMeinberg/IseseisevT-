@@ -43,22 +43,22 @@ public class PoemTests {
 	}
 	
 	@Test
-	public void countHowManyTimesWordAppearsInPoem() {//countWordAppearsInPoem
+	public void countTimesWordAppearsInPoem() {//countWordAppearsInPoem
 		assertThat(luuletus.countWord(luuletusRunnel, "jumal"), is(2));
 	}
 	
 	@Test
-	public void countHowManyTimesWordAppearsInPoemIsZero() throws Exception {
+	public void wordDoesntAppearInPoem() {
 		assertThat(luuletus.countWord(luuletusRunnel, "küpsis"), is(0));
 	}
 
 	@Test
-	public void checkRowNrTheWordFirstAppearsIn() throws Exception {
+	public void checkRowNrTheWordFirstAppearsIn()  {
 		assertThat(luuletus.firstAppear(luuletusRunnel, "sind"), is(1));
 	}
 	
 	@Test
-	public void checkRowNrsTheWordAppearsIn() throws Exception {
+	public void checkRowNrsTheWordAppearsIn() {
 		List<Integer> itDoesContain = Arrays.asList(3,4);
 		List<Integer> itDoesNotContain = Arrays.asList();
 		
@@ -67,7 +67,7 @@ public class PoemTests {
 	}
 	
 	@Test
-	public void showRowWords() throws Exception {
+	public void showRowWords() {
 		List<String> itDoesContain = Arrays.asList("Kui sind kiusab kurat","kui sind jälgib jumal,");
 		List<String> itDoesNotContain = Arrays.asList();
 		
